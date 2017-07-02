@@ -24,10 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
-        
-        
-        
-        
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
     OneSignal.initWithLaunchOptions(launchOptions,
     appId: "181dcb38-b914-4abc-b81e-beb0df2f3523",
