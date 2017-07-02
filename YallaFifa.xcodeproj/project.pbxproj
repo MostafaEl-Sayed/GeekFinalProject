@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495671EF41AA300559D77 /* BlueLine.swift */; };
+		CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0495691EF41E5800559D77 /* RequestManager.swift */; };
+		CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF07C0E31EF0D1D70075C469 /* PlayStation.swift */; };
+		CF1B562C1EF879A30007E5B0 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */; };
+		CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */; };
+		CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */; };
+		CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */; };
+		CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */; };
+		CF67D4CB1EF329C5003A5D6B /* MatchRequestTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */; };
+		CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */; };
+		CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9203411EE9A83200DFBED5 /* Utilites.swift */; };
+		CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9381071EE6F2C60091083B /* AppDelegate.swift */; };
+		CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF93810B1EE6F2C60091083B /* Main.storyboard */; };
+		CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */; };
+		CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9381191EE6F3D60091083B /* Assets.xcassets */; };
+		CF95CF4A1EE8C37B004166C8 /* MatchRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */; };
+		CFBA26F61EEAE58C00CA0F1E /* PSLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */; };
+		CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */; };
+		CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */; };
+		CFBA26FE1EEAF43800CA0F1E /* UserDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */; };
+		CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA271F1EEB4D6E00CA0F1E /* User.swift */; };
+		CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBA27211EEB672500CA0F1E /* Protocols.swift */; };
+		E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */; };
+		E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */; };
+		E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */; };
+		E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */; };
+		EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.release.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.release.xcconfig"; sourceTree = "<group>"; };
+		0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YallaFifa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YallaFifa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0495671EF41AA300559D77 /* BlueLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueLine.swift; sourceTree = "<group>"; };
+		CF0495691EF41E5800559D77 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		CF07C0E31EF0D1D70075C469 /* PlayStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayStation.swift; sourceTree = "<group>"; };
+		CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
+		CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsVC.swift; sourceTree = "<group>"; };
+		CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonsController.swift; sourceTree = "<group>"; };
+		CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestTableVC.swift; sourceTree = "<group>"; };
+		CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		CF9203411EE9A83200DFBED5 /* Utilites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		CF9381041EE6F2C60091083B /* YallaFifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YallaFifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9381071EE6F2C60091083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF93810C1EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF9381111EE6F2C60091083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF9381131EE6F2C60091083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9381191EE6F3D60091083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchRequestVC.swift; sourceTree = "<group>"; };
+		CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSLocationsVC.swift; sourceTree = "<group>"; };
+		CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsCell.xib; sourceTree = "<group>"; };
+		CFBA271F1EEB4D6E00CA0F1E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CFBA27211EEB672500CA0F1E /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "enums&variabls.swift"; sourceTree = "<group>"; };
+		E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalController.swift; sourceTree = "<group>"; };
+		E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YallaFifa.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF9381011EE6F2C60091083B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC8B3A56EA560D26D688646 /* Pods_YallaFifa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D2402C424953753B7EEB157 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */,
+				087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AEB28813E26D99CCD31B4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F159E2D9E06726C0A2A4239 /* Pods_YallaFifa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF9380FB1EE6F2C60091083B = {
+			isa = PBXGroup;
+			children = (
+				CF9381061EE6F2C60091083B /* YallaFifa */,
+				CF9381051EE6F2C60091083B /* Products */,
+				7D2402C424953753B7EEB157 /* Pods */,
+				AEB28813E26D99CCD31B4B28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF9381051EE6F2C60091083B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF9381041EE6F2C60091083B /* YallaFifa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF9381061EE6F2C60091083B /* YallaFifa */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1C3F91EED8C78006D5C34 /* YallaFifa.entitlements */,
+				CF9381071EE6F2C60091083B /* AppDelegate.swift */,
+				CF0495691EF41E5800559D77 /* RequestManager.swift */,
+				CF67D4CC1EF32D51003A5D6B /* UserDetailsTableViewCell.swift */,
+				CFBA26F71EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift */,
+				CFDDCCC51EF43A4600A0C1D8 /* Helpers */,
+				CFDDCCC41EF43A1A00A0C1D8 /* Models */,
+				E0E85A051EF5FBC500E62F01 /* Views */,
+				E0E85A041EF5FB9400E62F01 /* Controllers */,
+				CF9381191EE6F3D60091083B /* Assets.xcassets */,
+				CF626E9F1EEF1275003770FC /* GoogleService-Info.plist */,
+				CF9381131EE6F2C60091083B /* Info.plist */,
+			);
+			path = YallaFifa;
+			sourceTree = "<group>";
+		};
+		CFDDCCC41EF43A1A00A0C1D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFBA271F1EEB4D6E00CA0F1E /* User.swift */,
+				CF0495671EF41AA300559D77 /* BlueLine.swift */,
+				CF07C0E31EF0D1D70075C469 /* PlayStation.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CFDDCCC51EF43A4600A0C1D8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFBA27211EEB672500CA0F1E /* Protocols.swift */,
+				CF65C4C11EEA022F006FDAE1 /* SSRadioButton.swift */,
+				CF9203411EE9A83200DFBED5 /* Utilites.swift */,
+				CF65C4C51EEA14BE006FDAE1 /* SSRadioButtonsController.swift */,
+				E0D1C3EF1EED8C44006D5C34 /* enums&variabls.swift */,
+				E0D1C3F21EED8C44006D5C34 /* GlobalController.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E0E85A041EF5FB9400E62F01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF65C4C31EEA11D0006FDAE1 /* MatchDetailsVC.swift */,
+				CF1B562B1EF879A30007E5B0 /* UserProfileViewController.swift */,
+				CF95CF491EE8C37B004166C8 /* MatchRequestVC.swift */,
+				CF67D4CA1EF329C5003A5D6B /* MatchRequestTableVC.swift */,
+				CFBA26F51EEAE58C00CA0F1E /* PSLocationsVC.swift */,
+				E0D1C3F01EED8C44006D5C34 /* SignUpVC.swift */,
+				E0D1C3F11EED8C44006D5C34 /* SigninVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E0E85A051EF5FBC500E62F01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF93810B1EE6F2C60091083B /* Main.storyboard */,
+				CFBA26FB1EEAF42000CA0F1E /* NothingFoundCell.xib */,
+				CFBA26FD1EEAF43800CA0F1E /* UserDetailsCell.xib */,
+				CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF9381031EE6F2C60091083B /* YallaFifa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF9381161EE6F2C60091083B /* Build configuration list for PBXNativeTarget "YallaFifa" */;
+			buildPhases = (
+				C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */,
+				CF9381001EE6F2C60091083B /* Sources */,
+				CF9381011EE6F2C60091083B /* Frameworks */,
+				CF9381021EE6F2C60091083B /* Resources */,
+				675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */,
+				A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YallaFifa;
+			productName = YallaFifa;
+			productReference = CF9381041EE6F2C60091083B /* YallaFifa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF9380FC1EE6F2C60091083B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = TheGang;
+				TargetAttributes = {
+					CF9381031EE6F2C60091083B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = V9V7XX28D6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CF9380FF1EE6F2C60091083B /* Build configuration list for PBXProject "YallaFifa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF9380FB1EE6F2C60091083B;
+			productRefGroup = CF9381051EE6F2C60091083B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF9381031EE6F2C60091083B /* YallaFifa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF9381021EE6F2C60091083B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9381121EE6F2C60091083B /* LaunchScreen.storyboard in Resources */,
+				CF93811A1EE6F3D60091083B /* Assets.xcassets in Resources */,
+				CFBA26FC1EEAF42000CA0F1E /* NothingFoundCell.xib in Resources */,
+				CFBA26FE1EEAF43800CA0F1E /* UserDetailsCell.xib in Resources */,
+				CF93810D1EE6F2C60091083B /* Main.storyboard in Resources */,
+				CF626EA01EEF1275003770FC /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		675EBDED1C2B6AB18ED45C0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4CAA905E4A3D5C4603FB678 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YallaFifa/Pods-YallaFifa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B000FF7415F5E5D9368393 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF9381001EE6F2C60091083B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0D1C3F51EED8C44006D5C34 /* SignUpVC.swift in Sources */,
+				CF67D4CB1EF329C5003A5D6B /* MatchRequestTableVC.swift in Sources */,
+				CF67D4CD1EF32D51003A5D6B /* UserDetailsTableViewCell.swift in Sources */,
+				CF9203421EE9A83200DFBED5 /* Utilites.swift in Sources */,
+				E0D1C3F41EED8C44006D5C34 /* enums&variabls.swift in Sources */,
+				CF65C4C61EEA14BE006FDAE1 /* SSRadioButtonsController.swift in Sources */,
+				CFBA27201EEB4D6E00CA0F1E /* User.swift in Sources */,
+				E0D1C3F71EED8C44006D5C34 /* GlobalController.swift in Sources */,
+				CF07C0E41EF0D1D70075C469 /* PlayStation.swift in Sources */,
+				CF95CF4A1EE8C37B004166C8 /* MatchRequestVC.swift in Sources */,
+				E0D1C3F61EED8C44006D5C34 /* SigninVC.swift in Sources */,
+				CF65C4C41EEA11D0006FDAE1 /* MatchDetailsVC.swift in Sources */,
+				CF0495681EF41AA300559D77 /* BlueLine.swift in Sources */,
+				CFBA26F61EEAE58C00CA0F1E /* PSLocationsVC.swift in Sources */,
+				CFBA27221EEB672500CA0F1E /* Protocols.swift in Sources */,
+				CF1B562C1EF879A30007E5B0 /* UserProfileViewController.swift in Sources */,
+				CF9381081EE6F2C60091083B /* AppDelegate.swift in Sources */,
+				CF04956A1EF41E5800559D77 /* RequestManager.swift in Sources */,
+				CF65C4C21EEA022F006FDAE1 /* SSRadioButton.swift in Sources */,
+				CFBA26F81EEAE5DB00CA0F1E /* PSDetailsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF93810B1EE6F2C60091083B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF93810C1EE6F2C60091083B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF9381101EE6F2C60091083B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF9381111EE6F2C60091083B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF9381141EE6F2C60091083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF9381151EE6F2C60091083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF9381171EE6F2C60091083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B04C6B37CD708B5CF7D9CCE0 /* Pods-YallaFifa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YallaFifa/YallaFifa.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V9V7XX28D6;
+				INFOPLIST_FILE = YallaFifa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF9381181EE6F2C60091083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087D1752BE99D58A38A59AB4 /* Pods-YallaFifa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YallaFifa/YallaFifa.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V9V7XX28D6;
+				INFOPLIST_FILE = YallaFifa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheGang.YallaFifa.com;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF9380FF1EE6F2C60091083B /* Build configuration list for PBXProject "YallaFifa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9381141EE6F2C60091083B /* Debug */,
+				CF9381151EE6F2C60091083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF9381161EE6F2C60091083B /* Build configuration list for PBXNativeTarget "YallaFifa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9381171EE6F2C60091083B /* Debug */,
+				CF9381181EE6F2C60091083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF9380FC1EE6F2C60091083B /* Project object */;
+}
