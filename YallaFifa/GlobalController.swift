@@ -36,7 +36,7 @@ class GlobalController : UIViewController ,UITextFieldDelegate , UIGestureRecogn
     }
     
     
-    override func hideKeyboardWhenTappedAround() {
+     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(GlobalController.textFieldShouldReturn(_:)))
         view.addGestureRecognizer(tap)
     }
@@ -108,5 +108,6 @@ class GlobalController : UIViewController ,UITextFieldDelegate , UIGestureRecogn
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     
 }

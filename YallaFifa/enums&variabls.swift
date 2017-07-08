@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Foundation
+import SystemConfiguration
 
 let defaults = UserDefaults.standard
 var userType = UserType.undefined
@@ -68,3 +70,4 @@ extension NSDictionary {
     }
     
 }
+

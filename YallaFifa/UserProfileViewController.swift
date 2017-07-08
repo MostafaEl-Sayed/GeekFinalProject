@@ -24,16 +24,20 @@ class UserProfileViewController: UIViewController {
     var fifaAccountIDTextField: UITextField!
     var choosedMetpoint = Location()
     var userProfileData = User()
+    var notificationTitle = ""
     var startRequesting = false
     var notificationComeProfileStatus = false
-    var notificationTitle = ""
+    var startNotificationBtn = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
         prepareDataOfProfileView()
+        setupViewWhileNotification()
+    }
+    func setupViewWhileNotification()  {
         if notificationComeProfileStatus {
-            
             if  notificationTitle != "" {
                 
                 let idArr = notificationTitle.characters.split{$0 == ":"}.map(String.init)
@@ -47,9 +51,7 @@ class UserProfileViewController: UIViewController {
             }else {
                 prepareStatusOfNotificationView()
             }
-            
         }
-        
     }
     func prepareStatusOfNotificationView(){
         self.requestGameBtn.isHidden = true
@@ -58,7 +60,6 @@ class UserProfileViewController: UIViewController {
         
     
     }
-    
     func prepareDataOfProfileView(){
         if startRequesting {
             self.requestGameBtn.isHidden = false
@@ -70,6 +71,11 @@ class UserProfileViewController: UIViewController {
         userNameLabel.text! = userProfileData.email
         userPhoneNumber.text! = userProfileData.phone
     }
+    func configurationTextField(textField: UITextField!){
+        textField.placeholder = "..."
+        self.fifaAccountIDTextField = textField
+    }
+    
     @IBAction func makeNewRequestBtnAct(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
@@ -85,11 +91,18 @@ class UserProfileViewController: UIViewController {
         UIApplication.shared.open(number)
     }
     @IBAction func startRequestingBtnAct(_ sender: Any) {
-        print("player ID \(userProfileData.playerID)")
-        print("user profile \(userProfileData.email)")
-        RequestManager.defaultManager.sendRequestToUser(userProfileData,notificationMessage: "Yalla Bena nl3boo ya zmerro",notificationStatus: "newRequest",meetingPoint: choosedMetpoint) { (_, _) in
-            print("am sent")
-        }
+        startNotificationBtn = true
+        if isInternetAvailable() {
+            if !startNotificationBtn {
+                RequestManager.defaultManager.sendRequestToUser(userProfileData,notificationMessage: "Yalla Bena nl3boo ya zmerro",notificationStatus: "newRequest",meetingPoint: choosedMetpoint) { (_, _) in
+                }
+            }else {
+                displayMessage(title: "Fail access connection", message: "Fail to access your internet connection please check and access it")
+                }
+                self.startNotificationBtn = false
+            }
+           
+        
     }
     @IBAction func acceptNotificationVtnAct(_ sender: Any) {
         
@@ -106,10 +119,6 @@ class UserProfileViewController: UIViewController {
         }))
         self.present(alert, animated: true,completion: nil)
     }
-    func configurationTextField(textField: UITextField!){
-        textField.placeholder = "..."
-        self.fifaAccountIDTextField = textField
-    }
     @IBAction func cancelNotificationBtnAct(_ sender: Any) {
          let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
@@ -119,19 +128,9 @@ class UserProfileViewController: UIViewController {
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKeyAndVisible()
     }
-    
     @IBAction func backBtnAct(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

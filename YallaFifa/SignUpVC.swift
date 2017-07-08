@@ -19,16 +19,19 @@ class SignUpVC: GlobalController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollViewInitilaizer(scrollView: scrollView)
-        
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @IBAction func backTapped(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
     }
-    
-    
     @IBAction func signupTapped(_ sender: Any) {
+        
+        if !isValidPhone(testStr: phoneNumberTextField.text!) {
+            self.presentAlert(title: "Fail to signup" , mssg: "Please enter valid phone number.")
+        }else {
+            return 
+        }
         
         if passwordTextField.text! != confirmPassTextField.text! {
             self.presentAlert(title: "Error" , mssg: "Confirm password field should be the same as password field!")

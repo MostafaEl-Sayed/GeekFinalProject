@@ -17,7 +17,6 @@ class RequestManager{
     var ref: DatabaseReference!
     static let defaultManager = RequestManager()
     private init (){
-        print("* my private init *")
         self.ref = Database.database().reference()
     }
     
@@ -36,7 +35,7 @@ class RequestManager{
                     
                     
                     if let error = error {
-                        print("DataTask error: " + error.localizedDescription + "\n")
+                        
                         completionHandler("\(error.localizedDescription)", false, nil)
                     } else if let data = data,
                         let response = response as? HTTPURLResponse,
@@ -47,7 +46,7 @@ class RequestManager{
                                 if let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
                                     
                                     let status = dictionary["status"] as! String
-                                    print(status)
+                                   
                                     if status == "OK" {
                                         let convetedData = BlueLine(blueLineData: dictionary)
                                         completionHandler(status, true,convetedData)
@@ -78,11 +77,10 @@ class RequestManager{
                 
                 let tags = ["userEmail":"\(email)"]
                 OneSignal.sendTags(tags, onSuccess: { (result) in
-                    print("success! on signall a7la msaa 3leek ")})
+                })
                 { (error) in print("Error sending tags - "+error!.localizedDescription) }
                 
                 let uidd = "\(user.uid)"
-                
                 self.getUserWithId(uidd, completionHandler: { (user) in
                     currentUser = user
                     RequestManager.defaultManager.saveCurrentUser()
@@ -105,7 +103,6 @@ class RequestManager{
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let user = user {
-                print("successfully signed up")
                 self.ref.child("users").child(user.uid).setValue(["email": email , "phoneNumber" : phoneNumber,"typeOfUser":"" ,"userAvailability":"" , "psCounter" : 0 ,"playerID":playerID])
                 self.ref.child("users").child(user.uid).child("location").setValue(["long" : "" , "lat" : ""])
                 
@@ -149,7 +146,6 @@ class RequestManager{
         getCurrentUserForPsCreated { (counter) in
             let currentUserUid = defaults.value(forKey: "uid") as! String
             self.ref.child("PS").child(currentUserUid+"\(counter)").setValue(["name": name , "phoneNumber" : phone])
-            print("\(longtude),\(latitude)")
             self.ref.child("PS").child(currentUserUid+"\(counter)").child("location").setValue(["long" : longtude , "lat" : latitude])
             self.updateUserCounter(counter)
         }
@@ -175,46 +171,42 @@ class RequestManager{
         let currentUserUid = defaults.value(forKey: "uid") as! String
         self.ref.child(childKey.rawValue).child(currentUserUid).child("location").setValue(["long" : longtude , "lat" : latitude])
     }
-    //        var registeredUsers:[String] = []
-    //        OneSignal.getTags({ tags in
-    //            print("tags - \(tags!)")
-    //            registeredUsers = tags?["userEmail"] as! [String]
-    //
-    //        }, onFailure: { error in
-    //            print("Error getting tags - \(error?.localizedDescription)")
-    //            completionHandler("\(error?.localizedDescription)",false)
-    //        })
     func sendRequestToUser(_ targetUserDetails : User ,notificationMessage:String,notificationStatus:String,meetingPoint:Location,completionHandler:@escaping (_ status:   String, _ success: Bool) -> Void){
         
-        if targetUserDetails.playerID != "" {
-
-            var data =
-                ["email":"\(targetUserDetails.email)",
-                    "phoneNumber": "\(targetUserDetails.phone)",
-                    "playerID":"\(targetUserDetails.playerID)",
-                    "long":"\(targetUserDetails.location.longtude!)",
-                    "lat":"\(targetUserDetails.location.latitude!)",
-                    "typeOfUser":"\(targetUserDetails.typeOfUser)",
-                    "notificationStatus":"\(notificationStatus)"]
-            if targetUserDetails.typeOfUser == "meetFriends" {
-                data =
+        if isInternetAvailable() {
+            if targetUserDetails.playerID != "" {
+                
+                var data =
                     ["email":"\(targetUserDetails.email)",
                         "phoneNumber": "\(targetUserDetails.phone)",
                         "playerID":"\(targetUserDetails.playerID)",
                         "long":"\(targetUserDetails.location.longtude!)",
                         "lat":"\(targetUserDetails.location.latitude!)",
                         "typeOfUser":"\(targetUserDetails.typeOfUser)",
-                        "notificationStatus":"\(notificationStatus)","targetLong":"\(meetingPoint.longtude!)","targetLat":"\(meetingPoint.latitude!)"]
+                        "notificationStatus":"\(notificationStatus)"]
+                if targetUserDetails.typeOfUser == "meetFriends" {
+                    data =
+                        ["email":"\(targetUserDetails.email)",
+                            "phoneNumber": "\(targetUserDetails.phone)",
+                            "playerID":"\(targetUserDetails.playerID)",
+                            "long":"\(targetUserDetails.location.longtude!)",
+                            "lat":"\(targetUserDetails.location.latitude!)",
+                            "typeOfUser":"\(targetUserDetails.typeOfUser)",
+                            "notificationStatus":"\(notificationStatus)","targetLong":"\(meetingPoint.longtude!)","targetLat":"\(meetingPoint.latitude!)"]
+                }
+                
+                
+                OneSignal.postNotification(
+                    ["contents": ["en": "\(notificationMessage)"],
+                     "include_player_ids": ["\(targetUserDetails.playerID)"],
+                     "ios_badgeCount":"Increase",
+                     "data":data]
+                )
             }
+        } else {
             
-            
-            OneSignal.postNotification(
-                ["contents": ["en": "\(notificationMessage)"],
-                 "include_player_ids": ["\(targetUserDetails.playerID)"],
-                 "ios_badgeCount":"Increase",
-                 "data":data]
-            )
         }
+        
     }
     func updateTypeOfUser(typeOfUser:UserType){
         let currentUserUid = defaults.value(forKey: "uid") as! String

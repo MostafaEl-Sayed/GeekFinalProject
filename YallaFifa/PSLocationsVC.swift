@@ -23,16 +23,33 @@ class PSLocationsViewController: GlobalController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.scrollViewInitilaizer(scrollView: scrollView)
-        print("dah l final zfft \(psChoosedLocation.latitude),\(psChoosedLocation.longtude)")
-        print(psChoosedLocation.latitude)
     }
-
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if  textField.tag == 2 {
+            let currentCharacterCount = textField.text?.characters.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + string.characters.count - range.length
+            return newLength <= 11
+        } else if  textField.tag == 1 {
+            let currentCharacterCount = textField.text?.characters.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + string.characters.count - range.length
+            return newLength <= 20
+        }else {
+            return true
+        }
+        
+    }
     @IBAction func backBtnAct(_ sender: Any) {
         self.navigationController!.popViewController(animated: true)
     }
-    
     @IBAction func addNewPSLocation(_ sender: Any) {
         self.view.endEditing(true)
         var errorMessageTitle = ""
@@ -67,25 +84,6 @@ class PSLocationsViewController: GlobalController {
        
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if  textField.tag == 2 {
-            let currentCharacterCount = textField.text?.characters.count ?? 0
-            if (range.length + range.location > currentCharacterCount){
-                return false
-            }
-            let newLength = currentCharacterCount + string.characters.count - range.length
-            return newLength <= 11
-        } else if  textField.tag == 1 {
-            let currentCharacterCount = textField.text?.characters.count ?? 0
-            if (range.length + range.location > currentCharacterCount){
-                return false
-            }
-            let newLength = currentCharacterCount + string.characters.count - range.length
-            return newLength <= 20
-        }else {
-            return true
-        }
-        
-    }
+    
 }
 

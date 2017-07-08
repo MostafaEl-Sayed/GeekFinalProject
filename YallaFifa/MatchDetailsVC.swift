@@ -23,10 +23,62 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(determineMyCurrentLocation())
+        determineMyCurrentLocation()
     }
 
+    func determineMyCurrentLocation() {
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+ 
+        manager.stopUpdatingLocation()
+        let lat = userLocation.coordinate.latitude
+        let long = userLocation.coordinate.longitude
+        self.userCurrentLocation.longtude = long
+        self.userCurrentLocation.latitude = lat
+        
+    }
     
+    @IBAction func goButtonTapped(_ sender: Any) {
+        if isInternetAvailable() {
+            RequestManager.defaultManager.updateLocationFor(.user, longtude: self.userCurrentLocation.longtude, latitude: self.userCurrentLocation.latitude)
+            if userType == .undefined {
+                presentAlert(title: "Fail", mssg: "You should selecet one of this choices")
+                return
+            }
+            currentUser.typeOfUser = "\(userType)"
+            if CLLocationManager.locationServicesEnabled() {
+                let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
+                vc.userCurrentLocation = self.userCurrentLocation
+                RequestManager.defaultManager.updateLocationFor(.user, longtude: userCurrentLocation.longtude, latitude: userCurrentLocation.latitude)
+                RequestManager.defaultManager.updateTypeOfUser(typeOfUser:userType)
+                self.navigationController!.pushViewController(vc, animated: true)
+                
+            } else {
+                displayMessage(title: "Fail access location", message: "Fail to access your location go to setting and access it")
+            }
+        }else {
+            displayMessage(title: "Fail access connection", message: "Fail to access your internet connection please check and access it")
+        }
+        
+        
+    }
+    @IBAction func signout(_ sender: Any) {
+        RequestManager.defaultManager.signout { (status, success) in
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "siginVC")
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     @IBAction func doneSelectionsBtnAct(_ sender: UIButton) {
         
         if sender.tag == 0 {
@@ -40,62 +92,6 @@ class MatchDetailsViewContoller: UIViewController, CLLocationManagerDelegate  {
         }
         
     }
-    
-    func determineMyCurrentLocation() -> Bool{
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.startUpdatingLocation()
-            return true
-        }else {
-            return false
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
- 
-        manager.stopUpdatingLocation()
-        let lat = userLocation.coordinate.latitude
-        let long = userLocation.coordinate.longitude
-        self.userCurrentLocation.longtude = long
-        self.userCurrentLocation.latitude = lat
-        
-    }
-    
-    
-    @IBAction func goButtonTapped(_ sender: Any) {
-        RequestManager.defaultManager.updateLocationFor(.user, longtude: self.userCurrentLocation.longtude, latitude: self.userCurrentLocation.latitude)
-        if userType == .undefined {
-            presentAlert(title: "Fail", mssg: "You should selecet one of this choices")
-            return
-        }
-        currentUser.typeOfUser = "\(userType)"
-        if CLLocationManager.locationServicesEnabled() {
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MatchRequestViewController") as! MatchRequestViewController
-            vc.userCurrentLocation = self.userCurrentLocation
-            RequestManager.defaultManager.updateLocationFor(.user, longtude: userCurrentLocation.longtude, latitude: userCurrentLocation.latitude)
-            RequestManager.defaultManager.updateTypeOfUser(typeOfUser:userType)
-            self.navigationController!.pushViewController(vc, animated: true)
-            
-        } else {
-            self.displayMessage(title: "Fail access location", message: "Fail to access your location go to setting and access it")
-        }
-        
-    }
-    
-    @IBAction func signout(_ sender: Any) {
-        RequestManager.defaultManager.signout { (status, success) in
-            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "siginVC")
-            self.present(vc, animated: true, completion: nil)
-        }
-    }
-    
 
 }
 
