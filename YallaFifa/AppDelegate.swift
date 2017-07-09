@@ -107,6 +107,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
             OneSignal.add(self as OSSubscriptionObserver)
     
         
+        // firebse configrartion
+        FirebaseApp.configure()
+        
         if let userLogined = defaults.value(forKey: "loginStatus") as? Bool {
             
             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -124,8 +127,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,OSSubscriptionObserver{
         GMSPlacesClient.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
         GMSServices.provideAPIKey("AIzaSyAb6GwMWZr5zGVO7q9OqFbgDRhVXB9kEf0")
         
-        // firebse configrartion
-        FirebaseApp.configure()
         return true
     }
 
