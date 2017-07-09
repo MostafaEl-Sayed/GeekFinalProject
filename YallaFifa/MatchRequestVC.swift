@@ -1,6 +1,6 @@
 //
 //  MakeDonationViewController.swift
-//  Wasteless
+//  YallaFifa
 //
 //  Created by Mostafa El_sayed on 1/29/17.
 //  Copyright © 2017 Industrial. All rights reserved.mm
